@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,55 +6,104 @@
     <title>Hello, WebVR! • A-Frame</title>
     <meta name="description" content="Hello, WebVR! • A-Frame">
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
     <a-scene background="color: #FAFAFA">
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
 <!--       CANVAS -->
-      <a-plane position="0 0 -5" rotation="0 0 0" width="10" height="10" color="#e3e2de" shadow>
-<!--         red box -->
-        <a-box position= "-1 2 0" rotation="0 0 0" width="4" height="4" color="#b8432a" shadow></a-box>
-<!--         lines -->
-        <a-box position= "-2 -1.1 0" rotation="0 0 0" width="2" height="2" color="#10130a" shadow></a-box>
-        <a-box position= "0 0 .5" rotation="0 0 0" width="6" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "0 4 1" rotation="0 0 0" width="6" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "1 -2.75 1" rotation="0 0 0" width="4" height=".1" color="#10130a" shadow></a-box>
-
-        <a-box position= "1 1 1" rotation="0 0 90" width="6" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "3 1.5 1" rotation="0 0 90" width="6.5" height=".1" color="#10130a" shadow></a-box>
-
-        <a-box position= "-3 .5 .7" rotation="0 0 90" width="7  " height=".1" color="#10130a" shadow></a-box>
+<!--        -->
+      <a-plane position="0 0 -1" rotation="0 0 0" width="10" height="10" color="#e3e2de" shadow
+               animation="property: object3D.position.z; to: -6; dir: alternate; dur: 3000; loop: false easeOut: ease-sine">
         
-        <a-box position= "1 -1.0 .75" rotation="0 0 0" width="5" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "-1 -2 .75" rotation="0 0 0" width="4" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "2 1.25 1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "1 -1.5 1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "2 2.25  1" rotation="0 0 0" width="2" height=".1" color="#10130a" shadow></a-box>
+<!--    red box -->
+        <a-box position= "-1 2 0" rotation="0 0 0" width="4" height="4" color="#b8432a" shadow
+               animation="property: object3D.position.z; to: .75; dir: alternate; dur: 16000; ease: ease-sine; loop: true"
+               event-set__enter="_event: mouseenter; material.color:#d45b40"
+               event-set__leave="_event: mouseleave; material.color:#b8432a"
+               event-set__showinfo="_event: click; _target: #info; visible: true"
+               ></a-box>
 
-        <a-box position= "1 3.75  1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "-3 3.75  .5" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "-3 4 1" rotation="0 0 0" width="1" height=".1" color="#10130a" shadow></a-box>
+        <a-box position= "-2 -1.1 0" rotation="0 0 0" width="2" height="2" color="#10130a" shadow
+              animation="property: object3D.position.z; to: 4; dir: alternate; dur: 15000; ease: ease-sine; loop: true"></a-box>
+        
+<!--    lines -->
+        <a-box position= "0 0 .5" rotation="0 0 0" width="6" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.x; to: 8; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "0 4 1" rotation="0 0 0" width="6" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.x; to: -6; dir: alternate; dur: 13000; ease: linear; loop: true"></a-box>
+        
+        <a-box position= "1 -2.75 1" rotation="0 0 0" width="4" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.x; to: 2; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+
+        <a-box position= "1 1 1" rotation="0 0 90" width="6" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.y; to: 5; dir: alternate; dur: 8000; ease: ease-sine; loop: true"></a-box>
+        <a-box position= "3 1.5 1" rotation="0 0 90" width="6.5" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.y; to: -3; dir: alternate; dur: 14000; ease: ease-sine; loop: true"></a-box>
+
+        <a-box position= "-3 .5 .7" rotation="0 0 90" width="7  " height=".1" color="#10130a" shadow
+               animation="property: object3D.position.y; to: 4; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "1 -1.0 .75" rotation="0 0 0" width="5" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.x; to: 2; dir: alternate; dur: 4000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "-1 -2 .75" rotation="0 0 0" width="4" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.x; to: -2; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "2 1.25 1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.x; to: 2; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "1 -1.5 1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.z; to: 2; dir: alternate; dur: 13000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "2 2.25  1" rotation="0 0 0" width="2" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.z; to: 10; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+
+        <a-box position= "1 3.75  1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.y; to: 6; dir: alternate; dur: 14000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "-3 3.75  .5" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.y; to: -5; dir: alternate; dur: 12000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "-3 4 1" rotation="0 0 0" width="1" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.x; to: -5; dir: alternate; dur: 14000; ease: ease-sine; loop: true"></a-box>
 
         <a-box position= "-3.4 2.25 .6" rotation="0 0 0" width=".75" height=".1" color="#10130a" shadow></a-box>
         <a-box position= "-3.4 -1 .6" rotation="0 0 0" width=".75" height=".1" color="#10130a" shadow></a-box>
 
-        <a-box position= "3 -2 1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow></a-box>
-        <a-box position= "-1 -1.5 1" rotation="0 0 90" width="3" height=".1" color="#10130a" shadow></a-box>
+        <a-box position= "3 -2 1" rotation="0 0 90" width="2" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.y; to: -5; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "-1 -1.5 1" rotation="0 0 90" width="3" height=".1" color="#10130a" shadow
+               animation="property: object3D.position.y; to: -3; dir: alternate; dur: 8000; ease: ease-sine; loop: true"></a-box>
 
 
 <!--         gray box -->
         <a-box position= "0 -1.1 0" rotation="0 0 0" width="2" height="2" color="#b1b5bc" shadow></a-box>
-        <a-box position= "0 -3 .3" rotation="0 0 0" width="6.5" height=".5" color="#b1b5bc" shadow></a-box>
-        <a-box position= "3.5 1.75 .3" rotation="0 0 90" width="6.5" height=".5" color="#b1b5bc" shadow></a-box>
-        <a-box position= "3.5 -2 .3" rotation="0 0 90" width="2" height=".5" color="#b8432a" shadow></a-box>
+        <a-box position= "0 -3 .3" rotation="0 0 0" width="6.5" height=".5" color="#b1b5bc" shadow
+               animation="property: object3D.position.z; to: 2.5; dir: alternate; dur: 20000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "3.5 1.75 .3" rotation="0 0 90" width="6.5" height=".5" color="#b1b5bc" shadow
+               animation="property: object3D.position.x; to: 4; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "3.5 -2 .3" rotation="0 0 90" width="2" height=".5" color="#b8432a" shadow
+               animation="property: object3D.position.y; to: -5; dir: alternate; dur: 7000; ease: ease-sine; loop: true"></a-box>
         <a-box position= "0 4.5 .5" rotation="0 0 0" width="5.75" height=".75" color="#b1b5bc" shadow></a-box>
         <a-box position= "-1 4.5 .3" rotation="0 0 0" width="5.75" height=".75" color="#b1b5bc" shadow></a-box>
 
         <a-box position= "-3.5 3 .5" rotation="0 0 0" width="1" height="1.5" color="#d1d3d0" shadow></a-box>
         
-        <a-box position= "-3.5 .75 .5" rotation="0 0 0" width="1" height="3" color="#b1b5bc" shadow></a-box>
+        <a-box position= "-3.75 .65 .5" rotation="0 0 0" width="1" height="3" color="#b1b5bc" shadow
+        animation="property:rotation; to:0 360 0; loop: true; dur: 20000; easing: linear;"></a-box>
         
-        <a-box position= "2 3.5 .9" rotation="0 0 0" width="2" height="2.5" color="#e3be54" shadow></a-box>
-        <a-box position= "-3.55; -2.25 .9" rotation="0 0 0" width="1" height="2" color="#e3be54" shadow></a-box>
+        <a-box position= "2 3.5 .9" rotation="0 0 0" width="2" height="2.5" color="#e3be54" shadow
+               animation="property: object3D.position.z; to: 1.5; dir: alternate; dur: 14000; ease: ease-sine; loop: true"></a-box>
+        
+        <a-box position= "-3.55; -2.25 .9" rotation="0 0 0" width="1" height="2" color="#e3be54" shadow
+               animation="property: object3D.position.z; to: -1; dir: alternate; dur: 15000; ease: ease-sine; loop: true"></a-box>
         
         <a-box position= "2 1.25 .8" rotation="0 0 0" width="2" height="2" shadow></a-box>
         <a-box position= "2 -.5 .25" rotation="0 0 0" width="2" height="1" shadow></a-box>
@@ -62,15 +112,17 @@
         <a-box position= "0 -2.5 .5" rotation="0 0 0" width="2" height=".5" color="#10130a" shadow></a-box>
         
         <a-box position= "-2 -2.5 .5" rotation="0 0 0" width="2" height="1" color="#b1b5bc" shadow></a-box>
-        <a-entity position= "-.5 2 3" text="value: Composition with Large Red Plane, Yellow, Black, Grey and Blue \nby Piet Mondrian;" scale= "2 2 2">
+        
+        <a-entity position= "0 2.5 3" text="value: Click on the red square for info" scale= "3 3 3"></a-entity>
+        <a-entity visible = "false" id="info" position= "-.5 2 3" text="value: Composition with Large Red Plane, Yellow, Black, Grey and Blue \nby Piet Mondrian" scale= "2 2 2">
             <a-entity position= "0 -.5 -.5" text="value: Avoids references to the real world, using only primary colors, values, and directions. Representative of The Style movement in 1917."></a-entity>
         </a-entity>
 <!--         ff00fc -->
         
+        
 
         
       </a-plane>
-      
     </a-scene>
   </body>
 </html>
