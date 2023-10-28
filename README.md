@@ -1,5 +1,6 @@
 # AframeAssignment
 a small art project to learn about VR on the web using https://aframe.io/
+
 Pretty dope framework. Even though I just used primitive shapes, I can see myself doing a lot more with it.
 
 Here is a preview of index.html:
